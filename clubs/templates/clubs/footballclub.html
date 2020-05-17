@@ -1,0 +1,23 @@
+{% extends 'clubs/base.html' %}
+{% load static %}  
+
+{% block content %}
+<div class="row">
+    <div class="col-md-2">
+        <img src="{{ club.logo.url }}" class="img-fluid">    
+    </div>
+    <div class="col-md-10">
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <h4>{{ club.name }}</h4>
+            <p class="text-dark">{{ club.founded_date }}</p>
+            <p class="text-dark">{{ club.official_website }}</p>
+            <p class="text-dark">{{ club.ground }}</p>
+            <div class="pt-3">
+              <a href="{% url 'clubs:club-list' %}" class="btn btn-sm btn-outline-primary">Return back</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+{% endblock %}

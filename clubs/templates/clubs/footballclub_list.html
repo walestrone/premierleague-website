@@ -1,0 +1,21 @@
+{% extends 'clubs/base.html' %}
+{% load static %}  
+
+{% block content %}
+<div class="row">
+    {% for club in clubs %}
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="{{ club.logo.url }}" class="img-fluid">
+        <div class="card-body">
+            <h4>{{ club.name }}</h4>
+          <p class="card-text">{{ club.ground }}</p>
+
+          <a href="{% url 'clubs:club-detail' club.slug %}" class="btn btn-sm btn-outline-danger">Club profile</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+{% endblock %}
