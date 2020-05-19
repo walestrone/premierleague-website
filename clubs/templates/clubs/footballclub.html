@@ -14,10 +14,32 @@
             <p class="text-dark">{{ club.official_website }}</p>
             <p class="text-dark">{{ club.ground }}</p>
             <div class="pt-3">
-              <a href="{% url 'clubs:club-list' %}" class="btn btn-sm btn-outline-primary">Return back</a>
+              <a href="{% url 'clubs:club-list' %}" class="btn btn-sm btn-outline-primary">Return back</a>    
             </div>
           </div>
         </div>
-      </div>
+      </div>    
+          
   </div>
+  <br />  
+  <h3 class="card-title">The full squad</h3>
+  <div class="row">
+    {% for player in club.player_set.all %}
+    <div class="col-md-3">
+    <div class="card mb-3 box-shadow">
+      <img class="card-img-top" src="{{ player.player_image.url }}" alt="Card image cap">
+      <div class="card-body">
+        <h3 class="card-title">{{ player.jersey_number }}</h3>
+        <b>{{ player.first_name }}</b>
+        <p class="text-dark">{{ player.date_of_date }}</p>
+        <p class="text-dark">{{ player.nationality }}</p>           
+        <a href="{% url 'clubs:player-detail' player.slug %}" class="btn btn-primary">View Player</a>
+      </div>
+    </div>
+  </div>
+    {% endfor %}
+    <br>
+  </div>
+
+
 {% endblock %}

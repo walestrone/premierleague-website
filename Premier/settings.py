@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'Premier.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'premier',
+        'NAME': 'premierdb',
         'USER': 'postgres',
         'PASSWORD': 'dmxrenard',
         'HOST': 'localhost',

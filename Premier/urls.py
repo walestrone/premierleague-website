@@ -7,7 +7,7 @@ from django.conf import settings
 
 
 urlpatterns = [
-    path('', include('clubs.urls')),
+    path('', include('clubs.urls', namespace='clubs')),
     path('admin/', admin.site.urls),
 ]
 
